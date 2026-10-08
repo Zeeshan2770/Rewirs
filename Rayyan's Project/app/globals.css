@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-base-700;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-base-950 text-ink-100 antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-ink-100;
+  }
+
+  :focus-visible {
+    outline: 2px solid theme("colors.accent.DEFAULT");
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .prose-lesson {
+    @apply max-w-prose text-[15px] leading-7 text-ink-300;
+  }
+  .prose-lesson p {
+    @apply mb-4;
+  }
+  .prose-lesson h2 {
+    @apply mt-8 mb-3 font-display text-xl text-ink-100;
+  }
+  .prose-lesson h3 {
+    @apply mt-6 mb-2 font-display text-lg text-ink-100;
+  }
+  .prose-lesson ul {
+    @apply mb-4 list-disc space-y-1 pl-5;
+  }
+}
